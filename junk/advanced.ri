@@ -1,0 +1,64 @@
+_lNOT__DEFAULT.RI.LOADED__sThen__iPL__getFile_default.ri_dPL__noDo_;
+
+
+
+
+// Playground
+
+
+
+
+
+// Lame prime test, use "<low> pr <high>", i.e. "10 pr 20" will output "11 13 17 19 "
+
+pr:={ $a:=(_L_); $a<(_R_) @> ({ $b:=2; $b<=$a/2 @> ({ $a%$b==0 => $b:=$a => $b++ }); $b!=$a => write $a{ }; $a++; }) };
+
+
+
+
+
+// Super high performance binary to decimal converter
+
+{0b}~={ _L_; $n:=_R_; $p:=#_R_-1; $b:=1; $res:=0; 0<=$p @> ({ $n::$p::1==1=>$res += $b;	$b *= 2; $p--; }); $res };
+
+
+
+
+// Loops, conditionals, etc.
+
+
+
+
+{
+
+
+what;
+ write asd
+;
+
+
+
+
+
+// The next function cleans trailing spaces from both ends of a string, it's
+// handy if the { } space operator isn't available, or if you want to strip whitespace
+// from escaped content
+
+{<>}~={_L_;
+_R_::0::1=={ }
+=><>(_R_::1)
+=>_R_::#_R_-1::1=={ }
+=><>(_R_::0::#_R_-1)
+=>_R_
+};
+
+{<>}#s##g#{<}-1;
+
+}
+
+
+
+
+// A common priority value for our higher level structure
+
+_U_:=#g#{~=};

@@ -1,0 +1,88 @@
+_lNOT__DEFAULT.RI.LOADED__sThen__iPL__getFile_default.ri_dPL__noDo_;
+
+// Furry dice ;
+
+// An attempt to parse english sentences ;
+
+// TODO:
+// RegExp support for symbol matching is essential ;
+// Also a mechanism to refer the (original) name of the symbol from inside the code ;
+
+_noun_:={ #g#{_sentence.nouns_}==0
+  =>
+    _sentence.nouns_:=_iELwrap_(_R_)_dELwrap_
+  =>
+    _sentence.nouns_:=_iELwrap__sentence.nouns_,(_R_)_dELwrap_
+};
+{_noun_}#s# 200000;
+
+
+robot:={ _noun_{robot}; }; {robot}#s##g#{_noun_};
+cat:={ _noun_{cat}; }; {cat}#s##g#{_noun_};
+bird:={ _noun_{bird}; }; {bird}#s##g#{_noun_};
+dog:={ _noun_{dog}; }; {dog}#s##g#{_noun_};
+
+
+
+
+_verb_:={
+
+  (_L_);
+  _sentence.subject_:=_iELwrap__sentence.arts_{ }_sentence.nouns__dELwrap_;
+  _sentence.arts_:={_sentence.arts_};
+  _sentence.nouns_:={_sentence.nouns_};
+
+
+  #g#{_sentence.verbs_}==0
+  =>
+    _sentence.verbs_:=_iELwrap_(_R_)_dELwrap_;
+  =>
+    _sentence.verbs_:=_iELwrap__sentence.verbs_,(_R_)_dELwrap_;
+
+write {R:}_R_{
+};
+write {obj:}_sentence.object_{
+};
+
+  ({
+
+    (_R_);
+    _sentence.object_:=_sentence.arts_{ }_sentence.nouns_;
+
+write {
+S:}_sentence.subject_{, V:}(_R_){, O:}_sentence.object_;
+
+write {
+S:}_sentence.subject_{, V:}(_R_){, O:}_sentence.arts_{ }_sentence.nouns_;
+
+  });
+};
+
+{_verb_}#s# 300000;
+
+kicked:={ _verb_{kicked}; }; {kicked}#s##g#{_verb_};
+bit:={ _verb_{bit}; }; {bit}#s##g#{_verb_};
+stroke:={ _verb_{stroke}; }; {stroke}#s##g#{_verb_};
+
+
+
+
+
+_art_:={ #g#{_sentence.arts_}==0
+  =>
+    _sentence.arts_:=_iELwrap_(_R_)_dELwrap_
+  =>
+    _sentence.arts_:=_iELwrap__sentence.arts_,(_R_)_dELwrap_;
+};
+
+{_art_}#s# 100000;
+
+
+the:={ _art_{the}; }; {the}#s##g#{_art_};
+
+{
+// in the default.ri setup it is a bad idea to assign a single letter ;
+// since whitespace is stripped at the very beginning, you can either match
+// nothing, or all the letter "a"s in all the words
+{ a }:={ _art_a }; { a }#s##g#{_art_};
+};

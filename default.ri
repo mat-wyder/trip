@@ -1,0 +1,80 @@
+
+_assign__noDo__iEL_
+_dEL__setPri__getPri__iEL__assign__dEL__mSub_2_noDo_
+ _assign__noDo__iEL_ _dEL__setPri__getPri__iEL__assign__dEL__mSub_2_noDo_
+	_assign__noDo__iEL_	_dEL__setPri__getPri__iEL__assign__dEL__mSub_2_noDo_
+_iEL__noDo__dEL__rename_;_noDo_
+_iELwrap_ _rename_ {;
+_dELwrap_ _rename_ };
+{_rename_} _rename_ >>>;
+{_left_} >>> {_L_}; {_right_} >>> {_R_};
+
+{~=} _assign_ {_assign_};{~=} _setPri_ 1 _mAdd_ _getPri_ {_assign_};
+{:=} ~= {_L_~=};
+{:=}_setPri__getPri_{~=};
+
+{_setPri_}>>>#s#;
+{_getPri_}>>>#g#;
+
+{_sThen_}>>>=>;
+{_sWhile_}>>>@>;
+{_iPL_}>>>(;
+{_dPL_}>>>);
+
+{_lOR_}>>>|;{_lAND_}>>>&;{_lNOT_}>>>!;{_lLT_}>>><;{_lEQ_}>>>{==};
+{!=}~={!(_L_)==(_R_)};{!=}#s##g#{!};
+{_mAdd_}>>>+;{_mSub_}>>>-;{_mMul_}>>>*;{_mDiv_}>>>/;
+^:={_TMP1_:=1;_TMP2_:=(_R_)+1;_TMP3_:=(_L_);0<(_TMP2_--)@>_TMP1_*=_TMP3_;_TMP1_};{^}#s#2+#g#{*};
+%:={(_L_)-(_L_/_R_)*_R_};
+{_sFind_}>>>??;{_sChop_}>>>::;{_sLen_}>>>#;
+{>}~={(_R_)<(_L_)};
+{>}#s##g#{<};
+{<=}~={(_L_)<(_R_)|(_L_)==(_R_)};{<=}#s##g#{<};
+{>=}~={(_L_)>(_R_)|(_L_)==(_R_)};{>=}#s##g#{>};
+{++}~={#g#_L_!=0=>_L_~=(_L_)+1};{++}#s##g#{+};
+{--}~={#g#_L_!=0=>_L_~=(_L_)-1};{--}#s##g#{-};
+{+=}~={#g#_L_!=0=>_L_~=(_L_)+(_R_)};{+=}#s##g#{:=};
+{-=}~={#g#_L_!=0=>_L_~=(_L_)-(_R_)};{-=}#s##g#{:=};
+{*=}~={#g#_L_!=0=>_L_~=(_L_)*(_R_)};{*=}#s##g#{:=};
+{/=}~={#g#_L_!=0=>_L_~=(_L_)/(_R_)};{/=}#s##g#{:=};
+
+{//}~={(_L_);(_R_::_R_??{
+}+1)}; {//}#s##g#{;}+2;
+
+{/*}~={(_L_;_R_::(_R_??{*/})+2)};
+{/*}#s##g#{;}+2;
+
+{write}~={_L_;(_R_)_putFile_{/dev/stdout};};
+{write}#s##g#{@>}+10;
+{read}~={_L_;_R_~=_getFile_{/dev/stdin};};
+{read}#s##g#{@>}+10;
+
+
+
+{_DEFAULT.RI.LOADED_}~=_true_;
+
+write {RI v0.5 init level 1};
+
+
+
+
+
+
+
+
+
+
+
+// this is inactive for now, basic console functionality implemented in the executable
+{
+
+_true_ @> ({
+write {>};
+ read LINE;
+ LINE!={SAVE} => write (LINE){
+} => ({ BUF _putFile_ {saved.ri}; BUF:=; });
+ BUF:=BUF{
+}LINE;
+});
+
+};

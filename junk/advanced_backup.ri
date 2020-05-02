@@ -1,0 +1,127 @@
+_lNOT__DEFAULT.RI.LOADED__sThen__iPL__getFile_default.ri_dPL__noDo_;
+
+// Advanced structures
+
+
+
+// Loops, conditionals, etc.
+
+
+
+
+
+
+// The next function cleans trailing spaces from both ends of a string, it's
+// handy if the { } space operator isn't available, or if you want to strip whitespace
+// from escaped content
+
+{<>}~={_L_;
+_R_::0::1=={ }
+=><>(_R_::1)
+=>_R_::#_R_-1::1=={ }
+=><>(_R_::0::#_R_-1)
+=>_R_
+};
+
+{<>}#s##g#{<}-1;
+
+// A common priority value for our higher level structure
+
+_U_:=#g#{~=};
+
+
+
+// kill - permanently removes a symbol from the namespace
+
+
+{{{
+
+
+{kill}~={_L_;_R_~=_R_;};
+{kill}#s#_U_;
+
+
+// stack for local symbol support in subprograms
+
+{push}~={_L_; (_R_)??{,} == #(_R_) => _RT_:=_iELwrap__R__dELwrap_;
+  _ST_:=_iELwrap__R__dELwrap_{.stack};
+  _PS_:={(0 != #g#_ST_) => _ST_ ~= (_ST_{,}_RT_) => _ST_ ~= (_RT_)};
+  (0 != #g#_RT_) => _PS_;
+  kill _RT_; kill _ST_; kill _PS_;
+};
+{push}#s#_U_;
+
+
+{pop}~={_L_; _RT_:=_iELwrap__R__dELwrap_; _ST_:=_iELwrap__R__dELwrap_{.stack};
+  _PP_:={
+  _POS_:=(_ST_)??{,}??-1;
+  _POS_<#(_ST_)
+           => ({ _RT_~=(_ST_)::_POS_+1; _ST_~=(_ST_)::0::_POS_; })
+	   => ({ (#g#_ST_)>0 => _RT_~=(_ST_); _ST_~=_ST_; }) };
+  (0 != #g#_ST_) & (0 != #g#_RT_) => _PP_;
+  kill _RT_; kill _ST_; kill _PP_; kill _POS_;
+};
+{pop}#s#_U_;
+
+
+// also two operators which let you switch any symbol on/off without removing it
+
+{disable}~={_L_;( (#g#_R_)!=2147483647 & (#g#_R_)!=0 ) => _R_{.oldpri}~=#g#_R_;_R_#s#2147483647;};
+{disable}#s#_U_;
+
+{enable}~={_L_;_R_#s#(_R_{.oldpri});};
+{enable}#s#_U_;
+
+
+// value swap operator (doesn't evaluate nothing, just swap)
+
+{_sw_}~={push _TMP_; _TMP_:=(_L_); _L_~=_getCode__R_; _R_~=_TMP_; pop _TMP_;};
+{_sw_}#s##g#{:=};
+
+
+// recognize intervals via the ".." symbol
+
+{..}~={
+  push _N1_; push _N2_; push _RES_; push _STEP_;
+  _N1_:=(_L_)+0; _N2_:=(_R_)+0;
+  _STEP_:=1; _N1_>_N2_ => _STEP_*=-1;
+  _RES_:=_N1_;
+  _N1_!=_N2_ @> ({ _RES_:=_RES_{,}(_N1_+_STEP_); _N1_+=_STEP_; });
+  pop _N1_; pop _N2_; pop _STEP_; _RES_
+};
+{..}#s##g#{+}-2;
+
+
+
+// for <var> in <set> do <expr>; - simple for loop
+
+{for}~={
+  _L_;
+  push _P1_; push _P2_; push _LV_; push _SET_; push _CORE_;
+  push _SL_; push _NEXT_; push _LAST_; push _CNT_;
+
+  _P1_:=_R_??{in}; _P2_:=_R_??{do}; _SET_:=<>(_R_::_P1_+2::_P2_-_P1_-2); _SL_:=#_SET_;
+  _LV_:=<>(_R_::0::_P1_);  _CORE_:=_R_::_P2_+2;
+  _LAST_:=0; _NEXT_:=_SET_??{,}; _CNT_:=1;
+
+  _LAST_ < _SL_ @> ({
+    _LV_ ~= _SET_::_LAST_::_NEXT_-_LAST_;
+
+    _CORE_;
+    _getCode_{_LV_}~=_getCode_{_LV_};
+    _LAST_:=_NEXT_+1;
+    _NEXT_:=_SET_??{,}??_CNT_++;
+  });
+
+  pop _P1_; pop _P2_; pop _LV_; pop _SET_; pop _CORE_;
+  pop _SL_; pop _NEXT_; pop _LAST_; pop _CNT_;
+  
+};
+{for}#s##g#{@>};
+
+
+
+write {Z v0.42 advanced tools loaded.
+};
+
+}}};

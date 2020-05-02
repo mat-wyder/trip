@@ -1,0 +1,4 @@
+#!/bin/sh
+echo "Building TRI $(cat VERSION) processor.."
+rm tri tri.o
+make

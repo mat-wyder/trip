@@ -1,0 +1,81 @@
+_lNOT__DEFAULT.TRI.LOADED__sThen__iPL__getFile_default.ri_dPL__noDo_;
+
+{
+
+{<>}~={_L_;
+_R_::0::1=={ }
+=><>(_R_::1)
+=>_R_::#_R_-1::1=={ }
+=><>(_R_::0::#_R_-1)
+=>_R_
+};
+
+{<>}#s##g#{<}-1;
+
+// A common priority value for our higher level structure
+
+_U_:=#g#{~=};
+
+
+
+// kill - permanently removes a symbol from the namespace
+
+
+
+
+{kill}~={_L_;_R_~=_R_;};
+{kill}#s#_U_;
+
+
+// stack for local symbol support in subprograms
+
+{push}~={_L_; (_R_)??{,} == #(_R_) => _RT_:=_iELwrap__R__dELwrap_;
+  _ST_:=_iELwrap__R__dELwrap_{.stack};
+  _PS_:={(0 != #g#_ST_) => _ST_ ~= (_ST_{,}_RT_) => _ST_ ~= (_RT_)};
+  (0 != #g#_RT_) => _PS_;
+  kill _RT_; kill _ST_; kill _PS_;
+};
+{push}#s#_U_;
+
+
+{pop}~={_L_; _RT_:=_iELwrap__R__dELwrap_; _ST_:=_iELwrap__R__dELwrap_{.stack};
+  _PP_:={
+  _POS_:=(_ST_)??{,}??-1;
+  _POS_<#(_ST_)
+           => ({ _RT_~=(_ST_)::_POS_+1; _ST_~=(_ST_)::0::_POS_; })
+	   => ({ (#g#_ST_)>0 => _RT_~=(_ST_); _ST_~=_ST_; }) };
+  (0 != #g#_ST_) & (0 != #g#_RT_) => _PP_;
+  kill _RT_; kill _ST_; kill _PP_; kill _POS_;
+};
+{pop}#s#_U_;
+
+
+// also two operators which let you switch any symbol on/off without removing it
+
+{disable}~={_L_;( (#g#_R_)!=2147483647 & (#g#_R_)!=0 ) => _R_{.oldpri}~=#g#_R_;_R_#s#2147483647;};
+{disable}#s#_U_;
+
+{enable}~={_L_;_R_#s#(_R_{.oldpri});};
+{enable}#s#_U_;
+
+
+// value swap operator (doesn't evaluate nothing, just swap)
+
+{_sw_}~={push _TMP_; _TMP_:=(_L_); _L_~=_getCode__R_; _R_~=_TMP_; pop _TMP_;};
+{_sw_}#s##g#{:=};
+
+
+};
+
+
+
+
+{?}~={_context_:="Q";_PARSE_(_L_);(_R_)};
+{!}~={_context_:="C";_PARSE_(_L_);(_R_)};
+{.}~={_context_:="S";_PARSE_(_L_);(_R_)};
+
+{_PARSE_}~={(_R_)};
+
+
+what:={_context_=="Q"=>(_R_)=>_R_};
+where:={(_L_)(_R_{.place})};

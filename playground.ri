@@ -1,0 +1,106 @@
+_lNOT__DEFAULT.RI.LOADED__sThen__iPL__getFile_default.ri_dPL__noDo_;
+
+
+
+
+// Playground
+// Inline comments need a semicolon terminator for some reason I'm too lazy to investigate now ;
+
+
+
+
+
+
+// Super high performance binary to decimal converter ;
+
+{0b}~={ _L_; $n:=_R_; $p:=#_R_-1; $b:=1; $res:=0; 0<=$p @> ({ $n::$p::1==1=>$res += $b; $b *= 2; $p--; }); $res };
+
+
+
+
+
+
+
+// Lame prime test, use "<low> _prime_ <high>", i.e. "10 _prime_ 20" will output "11 13 17 19 " ;
+
+_prime_:={ $a:=(_L_); $a<(_R_) @> ({ $b:=2; $b<=$a/2 @> ({ $a%$b==0 => $b:=$a => $b++ }); $b!=$a => write $a{ }; $a++; }) };
+
+
+
+
+
+
+
+// Factorial;
+
+_fact_:={ $a:=(_L_); $b:=1; $res:=1; $b<=$a @> ({ $res*=$b; $b++; }); $res };
+
+
+
+
+
+// Try something more fun: re-declare operators on the fly;
+
+writeln:={ write (_R_){
+};};
+
+var:=3;
+$!:={
+
+    writeln L:{ }_L_{, }R:{ }_R_;
+
+    var % 5 < 3 =>
+	({ 
+	    writeln P1;
+	    $$:={ (_L_)+(_R_) };
+        })
+    =>
+	({
+	    writeln P2;
+	    $$:={ (_L_)*(_R_) };
+	});
+
+    writeln var % 7;
+
+    var := var $$ 5;
+
+    var % 7 > 2 =>
+	var := var $! 4;
+    =>
+	x
+};
+
+{$!}#s##g#{!}-2;
+
+
+
+
+
+
+// Highly incomplete stuff ;
+///////////////////////////////////////// ;
+
+// Swap operator ;
+
+{<>}~={_L_;_T1_:=0;
+_T2_:=#_R_-1;
+(_R_::_T1_::1=={ }&_T1_<_T2_)@>_T1_++;
+(_R_::_T2_::1=={ }&0<_T2_)@>_T2_--;
+_T2_++;
+_T2_-=_T1_;
+_R_::_T1_::_T2_
+};
+{<>}#s#-1+#g#{<};
+
+
+
+
+// Quotes ;
+
+{"}~={{"}_R_}; {"}#s##g#{@>}+1;
+
+
+
+// Concatenation? ;
+
+{.=}~={_L_~=(_L_)(_R_)};{.=}#s##g#{:=};

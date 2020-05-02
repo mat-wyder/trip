@@ -1,0 +1,73 @@
+
+_assign__iEL__iPL__left__right__dPL__dEL__noDo_
+_BP__assign_10240_noDo_
+_iEL_^^_dEL__assign__iEL_
+_left__noDo_
+_iEL__TMP1__dEL__assign_0_noDo_
+_iEL__TMP2__dEL__assign__sLen__right__mSub_1_noDo_
+_iPL__iPL__right__sChop__TMP1__sChop_1_lEQ__iEL_ _dEL__lOR__right__sChop__TMP1__sChop_1_lEQ__iEL_	_dEL__dPL_
+_lAND__TMP1__lLT__TMP2__dPL__sWhile__iEL__TMP1__dEL__assign__TMP1__mAdd_1_noDo_
+_iPL__iPL__right__sChop__TMP2__sChop_1_lEQ__iEL_ _dEL__lOR__right__sChop__TMP2__sChop_1_lEQ__iEL_	_dEL__dPL_
+_lAND_0_lLT__TMP2__dPL__sWhile__iEL__TMP2__dEL__assign__TMP2__mSub_1_noDo_
+_iEL__TMP2__dEL__assign__TMP2__mAdd_1_noDo_
+_iEL__TMP2__dEL__assign__TMP2__mSub__TMP1__noDo_
+_right__sChop__TMP1__sChop__TMP2_
+_dEL__noDo_
+_iEL_^^_dEL__setPri__BP__mAdd_1024_noDo_
+
+_iEL_;_dEL__assign__iEL__iPL_^^_iPL__left__dPL__dPL__noDo__iPL_^^_iPL__right__dPL__dPL__dEL__noDo__iEL_;_dEL__setPri__BP__noDo_
+
+_iEL_then_dEL__assign__iEL__iPL_^^_iPL__left__dPL__dPL__sThen__iPL_^^_iPL__right__sChop_0_sChop__right__sFind_else_dPL__dPL__dEL__noDo_
+_iEL_then_dEL__setPri__BP__mAdd_16_noDo_
+_iEL_?@_dEL__assign__iEL__iPL_^^_iPL__left__dPL__dPL__sWhile__iPL_^^_iPL__right__dPL__dPL__dEL__noDo_
+_iEL_?@_dEL__setPri__BP__mAdd_16_noDo_
+
+_iEL_:=_dEL__assign__iEL_^^_iPL__left__dPL__assign__iPL_^^_iPL__right__dPL__dPL__dEL__noDo__iEL_:=_dEL__setPri__BP__mAdd_32_noDo_
+
+(_assign__iEL__iPL__dEL__noDo__iEL_(_dEL__setPri__BP__mAdd_48_noDo_
+)_assign__iEL__dPL__dEL__noDo__iEL_)_dEL__setPri__BP__mAdd_47_noDo_
+
+_iEL_||_dEL__assign__iEL_^^_iPL__left__dPL__lOR__iPL_^^_iPL__right__dPL__dPL__dEL__noDo__iEL_||_dEL__setPri__BP__mAdd_64_noDo_
+_iEL_&&_dEL__assign__iEL_^^_iPL__left__dPL__lAND__iPL_^^_iPL__right__dPL__dPL__dEL__noDo__iEL_&&_dEL__setPri__BP__mAdd_66_noDo_
+_iEL_!_dEL__assign__iEL_^^_iPL__left__dPL__lNOT__iPL_^^_iPL__right__dPL__dPL__dEL__noDo__iEL_!_dEL__setPri__BP__mAdd_68_noDo_
+_iEL_==_dEL__assign__iEL_^^_iPL__left__dPL__lEQ__iPL_^^_iPL__right__dPL__dPL__dEL__noDo__iEL_==_dEL__setPri__BP__mAdd_70_noDo_
+_iEL_<_dEL__assign__iEL_^^_iPL__left__dPL__lLT__iPL_^^_iPL__right__dPL__dPL__dEL__noDo__iEL_<_dEL__setPri__BP__mAdd_70_noDo_
+
+_iEL_->_dEL__assign__iEL_^^_iPL__left__dPL__setPri__iPL_^^_iPL__right__dPL__dPL__dEL__noDo__iEL_->_dEL__setPri__BP__mAdd_80_noDo_
+
+_iEL_::_dEL__assign__iEL_^^_iPL__left__dPL__sChop__iPL_^^_iPL__right__dPL__dPL__dEL__noDo__iEL_::_dEL__setPri__BP__mAdd_96_noDo_
+_iEL_??_dEL__assign__iEL_^^_iPL__left__dPL__setPri__iPL_^^_iPL__right__dPL__dPL__dEL__noDo__iEL_??_dEL__setPri__BP__mAdd_96_noDo_
+
+[[_assign__iELwrap__noDo__iEL_[[_dEL__setPri_-_iPL__BP__mAdd_2_dPL__noDo_
+]]_assign__dELwrap__noDo__iEL_]]_dEL__setPri__BP__mAdd_1_noDo_
+
++_assign__iEL__iPL_^^_iPL__left__dPL__dPL__mAdd__iPL_^^_iPL__right__dPL__dPL__dEL__noDo__iEL_+_dEL__setPri__BP__mAdd_112_noDo_
+-_assign__iEL__iPL_^^_iPL__left__dPL__dPL__mSub__iPL_^^_iPL__right__dPL__dPL__dEL__noDo__iEL_-_dEL__setPri__BP__mAdd_114_noDo_
+*_assign__iEL__iPL_^^_iPL__left__dPL__dPL__mMul__iPL_^^_iPL__right__dPL__dPL__dEL__noDo__iEL_*_dEL__setPri__BP__mAdd_116_noDo_
+/_assign__iEL__iPL_^^_iPL__left__dPL__dPL__mDiv__iPL_^^_iPL__right__dPL__dPL__dEL__noDo__iEL_/_dEL__setPri__BP__mAdd_118_noDo_
+
+?#_assign__iEL__iPL_^^_iPL__left__dPL__dPL__mRand__iPL_^^_iPL__right__dPL__dPL__dEL__noDo__iEL_/_dEL__setPri__BP__mAdd_128_noDo_
+#_assign__iEL__iPL_^^_iPL__left__dPL__dPL__sLen__iPL_^^_iPL__right__dPL__dPL__dEL__noDo__iEL_/_dEL__setPri__BP__mAdd_128_noDo_
+
+_iEL_
+
+This example illustrates a way how you may not write code. Many reasons.
+First, it's fuckin' slow, second, it lacks some symbols (the dual ones,
+like _sThen_ or _sChop_ not fully implemented), I won't waste more time on it
+as it seems pointless now (so it is an "experimental" code), but of course
+it's possible :)
+
+BUT from another (not too general) point of view, it is perfect, as it
+sets up its own set of operators, while leaving the defaults alone; This
+gives you better control over what's going on, and also a good chance to
+run any script at any time, for the price of more memory and much more
+time than default.ri does the same job.
+
+Note that in this context, I don't use my new symbols mixed up with the
+defaults, altough it would be shorter, but because there's a big gap
+between their priorities, if you try, for example, "x:=3_mAdd_4", it
+will result in _mAdd_ trying to add "x:=3" (which will set x to the
+value 3 and returns it too) to 4, so there's a good chance you don't
+even notice abnormal operation. Never mix up two "levels" this way!
+
+_dEL_ 
