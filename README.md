@@ -33,7 +33,7 @@ much that's all for now. There are no variables, functions, etc. - everything
 is represented by a generalized form of data, <u>symbols</u>.
 
 By default, all symbols are somewhat isolated, every one of them in ASCII
-with _surrounding_underscores_, hence parsing an ordinary text file most
+with \_surrounding_underscores\_, hence parsing an ordinary text file most
 likely does not ring any bells, so if you are up to some quick and low
 performance (!) stream editing, replacement task or more awk-ward stuff,
 just write a short script satisfying your needs, and include your subject
