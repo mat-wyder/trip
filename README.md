@@ -95,13 +95,13 @@ for proper program flow.
 For example, the default <b>"\_noDo\_"</b>
 symbol has the smallest preset priority (1024); it is used to split the code
 in smaller chunks that execute one-by-one, from left to right (typically
-this is the semicolon character in other languages). The <b>"_assign_",</b> <b>"_mAdd_",</b>
-etc. symbols have greater priority to execute after <b>"_noDo_".</b>
+this is the semicolon character in other languages). The <b>"\_assign\_",</b> <b>"\_mAdd\_",</b>
+etc. symbols have greater priority to execute after <b>"\_noDo\_".</b>
 To make things clear (?), here's an example: in <b>"a_assign_10_noDo_b_assign_20"</b>
 the
-first symbol found is <b>"_noDo_"</b> - it does what it is for,
+first symbol found is <b>"\_noDo\_"</b> - it does what it is for,
 evaluates
-the left side <b>"a_assign_10",</b> then the right side <b>"b_assign_10"_noDo_</b>
+the left side <b>"a_assign_10",</b> then the right side <b>"b_assign_20"</b>
 In
 the latter two expressions, <b>"_assign_"</b> is found and the letters
 become symbols with numbers in their code part.</p>
