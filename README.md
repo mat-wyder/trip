@@ -54,7 +54,7 @@ for now, this is among the issues to be solved, without sacrificing the
 simplicity)<br>
 </p>
 
-<b>@:={ $a:=(_L_); $b:=1; $res:=1; $b<=$a @> ({ $res*=$b; $b++; }); $res }; 5@</b>
+<b>@:={ $a:=(\_L\_); $b:=1; $res:=1; $b<=$a @> ({ $res*=$b; $b++; }); $res }; 5@</b>
 returns 5! = 1\*2\*3\*4\*5. Of course it can be defined as "!" but then you'll need to rename the logical "not" symbol.
 Note the ({ block of code }) construct after the loop ( @> ) symbol, this is how you can build
 hierarchy.<br>
