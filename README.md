@@ -2,6 +2,8 @@
 <u><b>The Random Instruction Parser v0.5</b></u><br>
 </p>
 
+![some basic examples](doc/s1.png)
+
 <p>TRIP is an interpreter aiming to provide a completely redefinable
 language. Most modern environments offer some level of flexibility,
 you can do lots of interesting stuff with lex/yacc, but as far as I know,
